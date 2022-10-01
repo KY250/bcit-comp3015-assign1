@@ -20,21 +20,38 @@ $articles = $articleRepository->getAllArticles();
 <?php require_once 'layout/header.php' ?>
 <body>
 <?php require_once 'layout/navigation.php' ?>
-    <form action="new_article.php" method="post">
-    <label>Title:
-    <input class="gv-input" type="text" name="title"><br> <br>
+<form action="new_article.php" method="post">
+<h2 style="font-weight:900; font-size:30px; text-align:center;">Update Articles</h2><br>
+
+    <label>
+    <input type="text" name="title"><br> <br>
+    <input type="text" name="link"> <br> <br>
     </label>
     
     <label>
-    <input type="submit" value="Submit">
+    <input class="btn" type="submit" value="Submit">
     </label>
-    </form>
+</form>
 </body>
 </html>
 
 <style>
-    .gv-input {
-        border:1px solid;
+    input[type="text"], select {
+        width: 50%;
+        padding: 3px 20px;
+        margin: 2px 0;
+        box-sizing: border-box;
+        border: 1px solid;
+    }
+    input[type=submit] {
+        border:none;
+        color:white;
+        width: 50%;
+        padding: 5px;
+        background:#1EAE00;
+        border-radius:5px;
+        margin: 2px 0;
+        cursor:pointer;
     }
 	form {
 		text-align:center;
