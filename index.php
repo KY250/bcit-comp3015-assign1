@@ -15,12 +15,22 @@ $articles = $articleRepository->getAllArticles();
 <body>
 <?php require_once 'layout/navigation.php' ?>
 <form>
-<h2 style="font-weight:900; font-size:30px;">Articles</h2><br>
+<h2 style="font-weight:900; font-size:30px; text-align:center;">Articles</h2><br>
 
 	<?php foreach($articles as $article): ?>
-        <div>
-            <?php echo $article->getTitle(); ?> 
-        </div>
+        <div class="container">
+			<div>
+			<a href="<?php echo $article->getUrl(); ?>">
+    			<?php echo $article->getTitle(); ?>
+			</a>
+        	</div>
+			<div class="icon">
+				<a  href="update_article.php"><img src="img/pencil.png"/></a> 
+			</div>
+			<div>
+				<a  href="delete_article.php"><img src="img/delete-button.png"/></a>
+			</div>
+		</div>
     <?php endforeach; ?>
 
 	<!-- <button type="button"><img src="img/pencil.png"/></button> <button type="button"><img src="img/delete-button.png"/></button> -->
@@ -30,7 +40,12 @@ $articles = $articleRepository->getAllArticles();
 
 <style>
 	form {
-		text-align:center;
+		margin: 70px;
+	}
+	.container {
+		margin-left:20%;
+		display:flex;
+		align-items:center;
 	}
 	img {
 		margin:5px;
